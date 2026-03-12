@@ -1,0 +1,86 @@
+﻿<Page x:Class="kulinarybook.Pages.PageTasks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kulinarybook.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageTasks">
+
+    <Grid Background="#FFEA8D8D" Margin="0,0,10,46">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <ComboBox x:Name="ComboFilter" VerticalAlignment="Center" Width="209"
+                  SelectionChanged="ComboFilter_SelectionChanged" Height="26" Margin="5"/>
+            <ComboBox x:Name="ComboSort" VerticalAlignment="Center" Width="190"
+                  SelectionChanged="ComboSort_SelectionChanged" Height="26" Margin="5"/>
+            <TextBox x:Name="TextSearch" TextWrapping="Wrap" VerticalAlignment="Center"
+                 Width="186" TextChanged="TextSearch_TextChanged" Height="26" Margin="5"/>
+        </StackPanel>
+        <ListView x:Name="listProducts" Margin="0,6,0,15" Background="#FFFFAAAA" Grid.Row="1" MouseDoubleClick="listProducts_MouseDoubleClick">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Border
+                                Width="200"
+                                Height="200"
+                                Margin="3"
+                                ClipToBounds="True"
+                                Grid.Column="0" >
+                            <Image Source="{Binding CurrentPhoto}" Stretch="UniformToFill"/>
+                        </Border>
+                        <StackPanel
+                            Grid.Column="1"
+                            Orientation="Vertical"
+                            HorizontalAlignment="Left">
+                            <TextBlock
+                                Height="auto"
+                                Text="{Binding RecipeName}"></TextBlock>
+                            <TextBlock>
+                                <Run Text="Категория: "/>
+                                <Run Text="{Binding Categories.CategoryName}"/>
+                            </TextBlock>
+                            <TextBlock>
+                             <Run Text="Автор: "/>
+                             <Run Text="{Binding Authors.AuthorName}"/>
+                            </TextBlock>
+
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                                <TextBlock TextWrapping="Wrap" xml:space="preserve">
+                             <Run Text="Описание: " FontWeight="Bold"/>
+                            <Run Text="{Binding Description}" />
+                                </TextBlock>
+                            </ScrollViewer>
+
+
+
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+
+        </ListView>
+        <Button x:Name="buttonaddreciep" Content="Добавить рецепт" HorizontalAlignment="Left" Margin="628,10,0,0" VerticalAlignment="Top" Background="#FF080707" Grid.Row="2" Click="buttonaddreciep_Click" Foreground="#FFE4AAAA" Height="36" Width="137"/>
+        <Button x:Name="buttonback" Content="Назад" HorizontalAlignment="Left" Margin="73,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="36" Width="119" Foreground="#FFE4AAAA" IsCancel="True" Background="#FF191919" Click="buttonback_Click"/>
+
+
+
+    </Grid>
+</Page>
+
