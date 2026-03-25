@@ -17,6 +17,8 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
+        <!-- Панель фильтров (без изменений) -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
             <ComboBox x:Name="ComboFilter" VerticalAlignment="Center" Width="209"
                   SelectionChanged="ComboFilter_SelectionChanged" Height="26" Margin="5"/>
@@ -25,62 +27,103 @@
             <TextBox x:Name="TextSearch" TextWrapping="Wrap" VerticalAlignment="Center"
                  Width="186" TextChanged="TextSearch_TextChanged" Height="26" Margin="5"/>
         </StackPanel>
-        <ListView x:Name="listProducts" Margin="0,6,0,15" Background="#FFFFAAAA" Grid.Row="1" MouseDoubleClick="listProducts_MouseDoubleClick">
-            <ListView.ItemTemplate >
-                <DataTemplate>
 
-                    <Grid>
+        <!-- Список рецептов с улучшенным форматированием -->
+        <ListView x:Name="listProducts" Margin="0,6,0,15" Background="#FFFFAAAA" Grid.Row="1" MouseDoubleClick="listProducts_MouseDoubleClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="500"/>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border
-                                Width="200"
-                                Height="200"
-                                Margin="3"
-                                ClipToBounds="True"
-                                Grid.Column="0" >
+
+                        <!-- Изображение -->
+                        <Border Width="180" Height="180" Margin="3" 
+                                ClipToBounds="True" 
+                                Grid.Column="0"
+                                Background="White"
+                                BorderBrush="#FFCCCCCC"
+                                BorderThickness="1">
                             <Image Source="{Binding CurrentPhoto}" Stretch="UniformToFill"/>
                         </Border>
-                        <StackPanel
-                            Grid.Column="1"
-                            Orientation="Vertical"
-                            HorizontalAlignment="Left">
-                            <TextBlock
-                                Height="auto"
-                                Text="{Binding RecipeName}"></TextBlock>
-                            <TextBlock>
-                                <Run Text="Категория: "/>
-                                <Run Text="{Binding Categories.CategoryName}"/>
-                            </TextBlock>
-                            <TextBlock>
-                             <Run Text="Автор: "/>
-                             <Run Text="{Binding Authors.AuthorName}"/>
-                            </TextBlock>
 
-                            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="300">
-                                <TextBlock TextWrapping="Wrap" xml:space="preserve">
-                             <Run Text="Описание: " FontWeight="Bold"/>
-                            <Run Text="{Binding Description}" />
-                                </TextBlock>
-                            </ScrollViewer>
+                        <!-- Информация о рецепте -->
+                        <StackPanel Grid.Column="1" Margin="10,5">
+                            <!-- Название рецепта -->
+                            <TextBlock Text="{Binding RecipeName}" 
+                                       FontSize="16" 
+                                       FontWeight="Bold"
+                                       Foreground="#FF5C3E3E"
+                                       Margin="0,0,0,8"/>
 
+                            <!-- Сетка для ровного выравнивания информации -->
+                            <Grid Margin="0,5,0,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
+                                <!-- Категория -->
+                                <TextBlock Grid.Row="0" Grid.Column="0" 
+                                           Text="Категория:" 
+                                           FontWeight="Bold"
+                                           Foreground="#FF5C3E3E"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" 
+                                           Text="{Binding Categories.CategoryName}"
+                                           Foreground="#FF7A5A5A"/>
 
+                                <!-- Автор -->
+                                <TextBlock Grid.Row="1" Grid.Column="0" 
+                                           Text="Автор:" 
+                                           FontWeight="Bold"
+                                           Foreground="#FF5C3E3E"
+                                           Margin="0,5,0,5"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" 
+                                           Text="{Binding Authors.AuthorName}"
+                                           Foreground="#FF7A5A5A"
+                                           Margin="0,5,0,5"/>
+
+                                <!-- Время приготовления (добавлено для полноты) -->
+                                <TextBlock Grid.Row="2" Grid.Column="0" 
+                                           Text="Время:" 
+                                           FontWeight="Bold"
+                                           Foreground="#FF5C3E3E"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" 
+                                           Text="{Binding CookingTime, StringFormat='{}{0} мин.'}"
+                                           Foreground="#FF7A5A5A"/>
+                            </Grid>
+
+                            <!-- Описание с рамкой для аккуратности -->
+                            <Border Background="#FFF5F5F5" 
+                                    BorderBrush="#FFDDDDDD" 
+                                    BorderThickness="1" 
+                                    CornerRadius="5"
+                                    Padding="8"
+                                    Margin="0,5,0,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
+                                    <TextBlock TextWrapping="Wrap" 
+                                               xml:space="preserve"
+                                               Foreground="#FF666666">
+                                        <Run Text="Описание: " FontWeight="Bold" Foreground="#FF5C3E3E"/>
+                                        <Run Text="{Binding Description, FallbackValue='Описание отсутствует'}"/>
+                                    </TextBlock>
+                                </ScrollViewer>
+                            </Border>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-
-
         </ListView>
+
+        <!-- Кнопки (без изменений) -->
         <Button x:Name="buttonaddreciep" Content="Добавить рецепт" HorizontalAlignment="Left" Margin="628,10,0,0" VerticalAlignment="Top" Background="#FF080707" Grid.Row="2" Click="buttonaddreciep_Click" Foreground="#FFE4AAAA" Height="36" Width="137"/>
         <Button x:Name="buttonback" Content="Назад" HorizontalAlignment="Left" Margin="73,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="36" Width="119" Foreground="#FFE4AAAA" IsCancel="True" Background="#FF191919" Click="buttonback_Click"/>
-
-
-
     </Grid>
 </Page>
 

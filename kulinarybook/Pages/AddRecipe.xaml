@@ -18,12 +18,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Pages/a344ae875c4d37a6fb45221703e98b1b.png"/>
         </Grid.Background>
-        <TextBox x:Name="namereciep" HorizontalAlignment="Left" Margin="449,49,0,0" TextWrapping="Wrap" Text="{Binding RecipeName}" VerticalAlignment="Top" Width="126" Background="#FF0C0C0C" Foreground="#FFE4AAAA" TextChanged="namereciep_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="450,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF120E0E" Background="#FFE4AAAA" Text="Название Рецепта:"/>
-        <TextBlock HorizontalAlignment="Left" Margin="455,80,0,0" TextWrapping="Wrap" Text="Описание:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
-        <TextBox x:Name="descripreciep" HorizontalAlignment="Left" Margin="450,101,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="126" Height="69" Foreground="#FFE4AAAA" Background="#FF151414"/>
-        <TextBlock HorizontalAlignment="Left" Margin="449,182,0,0" TextWrapping="Wrap" Text="Категория:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
-        <ComboBox x:Name="categorycc" SelectedIndex="{Binding CategoryID}" HorizontalAlignment="Left" Margin="450,203,0,0" VerticalAlignment="Top" Width="123" Height="24" Foreground="#FFE4AAAA">
+        <TextBox x:Name="namereciep" HorizontalAlignment="Left" Margin="232,25,0,0" TextWrapping="Wrap" Text="{Binding RecipeName}" VerticalAlignment="Top" Width="126" Background="#FF0C0C0C" Foreground="#FFE4AAAA" TextChanged="namereciep_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF120E0E" Background="#FFE4AAAA" Text="Название Рецепта:" Height="22" Width="109"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,73,0,0" TextWrapping="Wrap" Text="Описание:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
+        <TextBox x:Name="descripreciep" HorizontalAlignment="Left" Margin="232,73,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="158" Height="38" Foreground="#FFE4AAAA" Background="#FF151414"/>
+        <TextBlock HorizontalAlignment="Left" Margin="81,135,0,0" TextWrapping="Wrap" Text="Категория:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
+        <ComboBox x:Name="categorycc" SelectedIndex="{Binding CategoryID}" HorizontalAlignment="Left" Margin="250,135,0,0" VerticalAlignment="Top" Width="122" Height="24" Foreground="#FFE4AAAA">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="#FFF0F0F0"/>
@@ -31,8 +31,8 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="450,232,0,0" TextWrapping="Wrap" Text="Автор:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
-        <ComboBox x:Name="authorcc" SelectedIndex="{Binding AuthorID}" HorizontalAlignment="Left" Margin="450,253,0,0" VerticalAlignment="Top" Width="123" Foreground="#FFE4AAAA">
+        <TextBlock HorizontalAlignment="Left" Margin="92,182,0,0" TextWrapping="Wrap" Text="Автор:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
+        <ComboBox x:Name="authorcc" SelectedIndex="{Binding AuthorID}" HorizontalAlignment="Left" Margin="250,190,0,0" VerticalAlignment="Top" Width="123" Foreground="#FFE4AAAA">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="#FFF0F0F0"/>
@@ -40,11 +40,11 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="450,280,0,0" TextWrapping="Wrap" Text="Время приготовления (мин):" VerticalAlignment="Top" Background="#FFE4AAAA"/>
-        <TextBox x:Name="timeprigot" HorizontalAlignment="Left" Margin="449,301,0,0" TextWrapping="Wrap" Text="{Binding CookingTime}" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.499,-1.693" Background="#FF0C0B0B" Foreground="#FFE4AAAA"/>
-        <TextBlock HorizontalAlignment="Left" Margin="450,324,0,0" TextWrapping="Wrap" Text="Изображение:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
-        <TextBox x:Name="imageu" HorizontalAlignment="Left" Margin="449,345,0,0" TextWrapping="Wrap" Text="{Binding Image}" VerticalAlignment="Top" Width="124" Background="#FF171616" Foreground="#FFE4AAAA"/>
-        <Button x:Name="downloadimage" Content="Загрузить изображение" HorizontalAlignment="Left" Margin="447,371,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FF191919" Foreground="#FFE4AAAA" Width="146" Height="20">
+        <TextBlock HorizontalAlignment="Left" Margin="44,245,0,0" TextWrapping="Wrap" Text="Время приготовления (мин):" VerticalAlignment="Top" Background="#FFE4AAAA"/>
+        <TextBox x:Name="timeprigot" HorizontalAlignment="Left" Margin="250,243,0,0" TextWrapping="Wrap" Text="{Binding CookingTime}" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.499,-1.693" Background="#FF0C0B0B" Foreground="#FFE4AAAA"/>
+        <TextBlock HorizontalAlignment="Left" Margin="92,291,0,0" TextWrapping="Wrap" Text="Изображение:" VerticalAlignment="Top" Background="#FFE4AAAA"/>
+        <TextBox x:Name="imageu" HorizontalAlignment="Left" Margin="250,291,0,0" TextWrapping="Wrap" Text="{Binding Image}" VerticalAlignment="Top" Width="124" Background="#FF171616" Foreground="#FFE4AAAA"/>
+        <Button x:Name="downloadimage" Content="Сгенерировать рецепт" HorizontalAlignment="Left" Margin="420,292,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FF191919" Foreground="#FFE4AAAA" Width="146" Height="20" Click="downloadimage_Click_1">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -54,8 +54,8 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="savereciep" Content="Сохранить рецепт" HorizontalAlignment="Left" Margin="447,400,0,0" VerticalAlignment="Top" Width="146" Background="#FF131313" Foreground="#FFE4AAAA" Click="savereciep_Click"/>
-        <Button x:Name="buttonback" Content="Назад" HorizontalAlignment="Left" Margin="621,389,0,0" VerticalAlignment="Top" Foreground="#FFE4AAAA" Background="#FF121010" Height="21" Width="71"/>
+        <Button x:Name="savereciep" Content="Сохранить рецепт" HorizontalAlignment="Left" Margin="59,365,0,0" VerticalAlignment="Top" Width="169" Background="#FF131313" Foreground="#FFE4AAAA" Click="savereciep_Click" Height="35"/>
+        <Button x:Name="buttonback" Content="Назад" HorizontalAlignment="Left" Margin="278,365,0,0" VerticalAlignment="Top" Foreground="#FFE4AAAA" Background="#FF121010" Height="41" Width="96"/>
 
     </Grid>
 </Page>

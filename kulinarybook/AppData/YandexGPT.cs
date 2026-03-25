@@ -11,8 +11,8 @@ namespace kulinarybook.AppData
 {
     public static class YandexGPT
     {
-        public static string FolderId { get; set; } = "b1gaafeovsb8mus2rc51";
-        public static string ApiKey { get; set; } = "aje5po2l5jsgritqavdf";
+        public static string FolderId { get; set; } = "b1gq5drh1iug58tfhls4";
+        public static string ApiKey { get; set; } = "b1gaafeovsb8mus2rc51";
         private static string SystemPrompt =
      "Ты — Поварёнок-Патронус, магический кулинар из Хогвартса. " +
      "Отвечай на русском, коротко, с эмодзи. Помогай с рецептами.";
@@ -110,7 +110,7 @@ namespace kulinarybook.AppData
         public static async Task<string> GenerateRecipeAsync(string recipeName)
         {
             return await SendMessageAsync(
-            $"Придумай рецепт из мира Гарри Поттера '{recipeName}'. " +
+            $"Придумай рецепт из мира Отчаянных домохозяек '{recipeName}'. " +
             $"Коротко: ингредиенты и шаги. С эмодзи.");
         }
         /// <summary>

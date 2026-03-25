@@ -106,49 +106,52 @@
     <Compile Include="AppData\AppConnect.cs" />
     <Compile Include="AppData\AppFrame.cs" />
     <Compile Include="AppData\Authors.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Categories.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\CookingSteps.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Ingredients.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model01.Context.cs">
+    <Compile Include="AppData\Model11.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model01.Context.tt</DependentUpon>
+      <DependentUpon>Model11.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model01.cs">
+    <Compile Include="AppData\Model11.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model01.Designer.cs">
+    <Compile Include="AppData\Model11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model01.edmx</DependentUpon>
+      <DependentUpon>Model11.edmx</DependentUpon>
     </Compile>
     <Compile Include="AppData\RecipeImages.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\RecipeIngredients.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Recipes.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\RecipeTags.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Reviews.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sysdiagrams.cs">
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Tags.cs">
-      <DependentUpon>Model01.tt</DependentUpon>
+      <DependentUpon>Model11.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\YandexGPT.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -209,12 +212,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AppData\Model01.edmx">
+    <EntityDeploy Include="AppData\Model11.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model01.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model11.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AppData\Model01.edmx.diagram">
-      <DependentUpon>Model01.edmx</DependentUpon>
+    <None Include="AppData\Model11.edmx.diagram">
+      <DependentUpon>Model11.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -231,7 +234,6 @@
   <ItemGroup>
     <Resource Include="Pages\a344ae875c4d37a6fb45221703e98b1b.png" />
     <Resource Include="AppData\Images\cookies.png" />
-    <Resource Include="AppData\Images\i %288%29.png" />
     <Resource Include="Pages\i %287%29.png" />
     <Resource Include="Pages\i %286%29.png" />
     <Resource Include="Pages\1920x.png" />
@@ -240,7 +242,7 @@
     <Resource Include="AppData\Images\margarita.png" />
     <Resource Include="AppData\Images\lococ.png" />
     <Resource Include="AppData\Images\spagetti.png" />
-    <Resource Include="AppData\Images\pirog.png" />
+    <Resource Include="AppData\Images\apple_pie_bree.png" />
     <Resource Include="AppData\Images\cookie.png" />
     <Resource Include="Pages\i %284%29.png" />
     <Resource Include="Pages\i %283%29.png" />
@@ -249,15 +251,15 @@
     <Resource Include="Pages\Desperate_Housewives_-_sigla.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\Model01.Context.tt">
+    <Content Include="AppData\Model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model01.Context.cs</LastGenOutput>
-      <DependentUpon>Model01.edmx</DependentUpon>
+      <LastGenOutput>Model11.Context.cs</LastGenOutput>
+      <DependentUpon>Model11.edmx</DependentUpon>
     </Content>
-    <Content Include="AppData\Model01.tt">
+    <Content Include="AppData\Model11.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model01.edmx</DependentUpon>
-      <LastGenOutput>Model01.cs</LastGenOutput>
+      <DependentUpon>Model11.edmx</DependentUpon>
+      <LastGenOutput>Model11.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

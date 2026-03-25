@@ -16,8 +16,8 @@
 
         <!-- ЗАГОЛОВОК -->
         <Border Grid.Row="0" Background="#FF2C0C0C" Padding="15" Margin="10">
-            <TextBlock Text="🧙 ПОВАРЁНОК-ПАТРОНУС"
- Foreground="Gold" FontSize="20" FontWeight="Bold"
+            <TextBlock Text="ПОВАРЁНОК-БРИ"
+ Foreground="#FFFFAAAA" FontSize="20" FontWeight="Bold"
  HorizontalAlignment="Center"/>
         </Border>
 
@@ -38,7 +38,7 @@
  Grid.Column="0"
 Background="White"
  Foreground="#FF500805"
- BorderBrush="Gold"
+ BorderBrush="#FFFFAAAA"
  BorderThickness="2"
 Padding="10"
  Height="40"
@@ -48,8 +48,8 @@ KeyDown="txtInput_KeyDown"/>
  Grid.Column="1"
  Content="📤"
  Background="#FF500805"
- Foreground="Gold"
- BorderBrush="Gold"
+ Foreground="#FFFFAAAA"
+ BorderBrush="#FFFFAAAA"
  BorderThickness="2"
  Width="40"
  Height="40"

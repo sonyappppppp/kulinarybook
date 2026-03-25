@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using kulinarybook.AppData; 
 
 namespace kulinarybook
 {
@@ -25,27 +26,36 @@ namespace kulinarybook
         {
             InitializeComponent();
 
-            AppData.AppConnect.model01 = new AppData.kulinarbookEntities2();
+            AppData.AppConnect.model01 = new AppData.kulinarbookEntities3();
             AppData.AppFrame.Framemain = frame1;
             frame1.Navigate(new Pages.Page1());
 
-            InitializeDatabaseConnection();
+            //InitializeDatabaseConnection();
 
             // 2. Навигация
-            SetupNavigationSystem();
+           // SetupNavigationSystem();
 
             // 3. 🆕 YANDEXGPT - ОДНА СТРОКА!
             _ = AppConnect.InitYandexGPTAsync();
 
+
             // 4. Авторизация
             LoadAuthorizationPage();
+        }
+
+        private void LoadAuthorizationPage()
+        {
+
+            AppData.AppFrame.Framemain.Navigate(new Pages.Page1());
+
+
         }
 
         private void Frame_Navigated(object sender, NavigationEventArgs e)
         {
 
         }
-      
+
 
         private void frame1_Navigated(object sender, NavigationEventArgs e)
         {
@@ -53,3 +63,4 @@ namespace kulinarybook
         }
     }
 }
+

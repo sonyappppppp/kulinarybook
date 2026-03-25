@@ -1,4 +1,6 @@
-﻿using kulinarybook.AppData;
+﻿
+
+using kulinarybook.AppData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +26,7 @@ namespace kulinarybook.Pages
         public MagicHelper()
         {
             InitializeComponent();
-            AddMessage("🦉 Привет! Я магический помощник. Задай вопрос о рецептах!",
+            AddMessage(" Привет! Я твой Бри - помощник. Задай вопрос о рецептах!",
 false);
         }
         private async void btnSend_Click(object sender, RoutedEventArgs e)
@@ -45,11 +47,11 @@ false);
             if (string.IsNullOrEmpty(message)) return;
 
             // Показываем сообщение пользователя
-            AddMessage($"🧙 {message}", true);
+            AddMessage($" {message}", true);
             txtInput.Clear();
 
             // Показываем "печатает..."
-            AddMessage("🦉 Печатает...", false, true);
+            AddMessage("Печатает...", false, true);
 
             try
             {

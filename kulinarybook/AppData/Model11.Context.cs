@@ -13,10 +13,10 @@ namespace kulinarybook.AppData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class kulinarbookEntities2 : DbContext
+    public partial class kulinarbookEntities3 : DbContext
     {
-        public kulinarbookEntities2()
-            : base("name=kulinarbookEntities2")
+        public kulinarbookEntities3()
+            : base("name=kulinarbookEntities3")
         {
         }
     
@@ -34,6 +34,7 @@ namespace kulinarybook.AppData
         public virtual DbSet<Recipes> Recipes { get; set; }
         public virtual DbSet<RecipeTags> RecipeTags { get; set; }
         public virtual DbSet<Reviews> Reviews { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tags> Tags { get; set; }
     }
 }

@@ -7,23 +7,11 @@ using System.Threading.Tasks;
 
 namespace kulinarybook.AppData
 {
-    internal class AppConnect
+    public static class AppConnect
     {
-        public static kulinarbookEntities2 model01;
+        public static kulinarbookEntities3 model01;
         public static int AuthorID;
-    }
-    public partial class Recipes
-    {
-        public string CurrentPhoto
-        {
-            get
-            {
-                if (String.IsNullOrEmpty(Image) || String.IsNullOrWhiteSpace(Image))
-                    return @"\Images\cookie.png";
-                else
-                    return @"\Images\" + Image;
-            }
-        }
+
         public static async Task InitYandexGPTAsync()
         {
             // Загружаем настройки
@@ -40,5 +28,18 @@ namespace kulinarybook.AppData
             }
         }
     }
-}
+    public partial class Recipes
+    {
+        public string CurrentPhoto
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(Image) || String.IsNullOrWhiteSpace(Image))
+                    return @"\Images\cookie.png";
+                else
+                    return @"\Images\" + Image;
+            }
+        }
 
+    }
+}
